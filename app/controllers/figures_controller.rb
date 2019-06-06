@@ -1,5 +1,5 @@
 class FiguresController < ApplicationController
-  
+
   # READing all figures on index page
   get '/figures' do
     @figures = Figure.all
@@ -15,5 +15,10 @@ class FiguresController < ApplicationController
   get '/figures/:id' do
     @figure = Figure.find(params[:id])
     erb :'figures/show'
+  end
+
+  post '/figures' do
+    Figure.create(name: params[:name], landmark_ids: params[:landmark_ids], title_ids: params[:title_ids])
+    redirect to '/figures'
   end
 end
