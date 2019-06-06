@@ -1,6 +1,19 @@
 class FiguresController < ApplicationController
+  
+  # READing all figures on index page
   get '/figures' do
     @figures = Figure.all
-    erb :'/application/index'
+    erb :'figures/index'
+  end
+
+  # CREATEing a new instance of Figure
+  get '/figures/new' do
+    erb :'figures/new'
+  end
+
+  # READing a specific instance of Figure
+  get '/figures/:id' do
+    @figure = Figure.find(params[:id])
+    erb :'figures/show'
   end
 end
