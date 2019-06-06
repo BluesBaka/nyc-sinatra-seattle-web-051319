@@ -1,3 +1,8 @@
+ Figure.destroy_all
+ Title.destroy_all
+ Landmark.destroy_all
+
+
 landmarks_list = {
     "Madison Square Guarden" => {
       :year_completed => 1901
@@ -44,7 +49,7 @@ figure_list = {
     },
     "Ada Lovelace" => {
     },
-    "Linus Torvalds" => { 
+    "Linus Torvalds" => {
     }
   }
 
