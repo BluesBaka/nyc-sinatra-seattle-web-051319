@@ -18,7 +18,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-    Figure.create(name: params[:name], landmark_ids: params[:landmark_ids], title_ids: params[:title_ids])
-    redirect to '/figures'
+    @figure = Figure.create(params[:figure])
+    redirect to "/figures/#{@figure.id}"
   end
 end
